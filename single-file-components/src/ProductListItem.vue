@@ -1,7 +1,8 @@
 <template>
     <li>
         <img :src="product.image">
-        <p><strong>{{product.name}}</strong></p>
+        <p><strong><router-link :to="`/products/${product.id}`">{{product.name}}</router-link>
+        </strong></p>
         <p>{{product.description}} <a @click="requestRemoval">Hide this item</a></p>
     </li>
 </template>
@@ -12,10 +13,10 @@
         props: ['product'],
         methods: {
             requestRemoval() {
-                this.$emit('remove');
+                this.$emit('remove')
             }
         }
-    };
+    }
 </script>
 
 <style scoped>
@@ -27,4 +28,4 @@
         margin-bottom: 40px;
         clear: both;
     }
-</style>  
+</style>

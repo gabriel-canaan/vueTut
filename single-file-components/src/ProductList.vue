@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     remove(i) {
-      this.products.splice(1, 1)
+      this.products.splice(i, 1)
     }
   }
 }
